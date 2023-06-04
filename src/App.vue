@@ -1,15 +1,13 @@
 <script setup lang="ts">
 const foo = () => {
-  console.log('123', "123")
+  console.log('123', '123')
   return false
 }
 foo()
 </script>
 
 <template>
-  <div>
-    APP
-  </div>
+  <div>APP</div>
 </template>
 
 <style scoped></style>
