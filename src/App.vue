@@ -1,5 +1,4 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="example-pagination-block">
@@ -13,7 +12,7 @@
 </template>
 
 <style scoped>
-.example-pagination-block+.example-pagination-block {
+.example-pagination-block + .example-pagination-block {
   margin-top: 10px;
 }
 
