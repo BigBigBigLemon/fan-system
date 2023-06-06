@@ -9,22 +9,22 @@ defineProps({
   // 属性前缀
   prefix: {
     type: String,
-    default: '#icon-'
+    default: '#icon-',
   },
   // 图标名称
   name: String,
   // 填充颜色
   color: {
     type: String,
-    default: 'black'
+    default: 'black',
   },
   width: {
     type: String,
-    defalut: '16px'
+    defalut: '16px',
   },
   height: {
     type: String,
-    defalut: '16px'
-  }
+    defalut: '16px',
+  },
 })
 </script>
