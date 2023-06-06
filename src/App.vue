@@ -1,6 +1,6 @@
 <template>
-  <div class="content">
-    <SvgIcon name="snow" color="pink"></SvgIcon>
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,8 +12,4 @@ onMounted(() => {
 })
 </script>
 
-<style scoped lang="scss">
-.content {
-  background: hotpink;
-}
-</style>
+<style scoped lang="scss"></style>
