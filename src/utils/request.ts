@@ -3,6 +3,7 @@
  */
 import axios from 'axios'
 import { ElMessage } from 'element-plus/es/components/index'
+
 // 通过create创建一个axios实例来配置请求
 const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API, // 基础路径湖携带/api

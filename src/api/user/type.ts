@@ -5,12 +5,13 @@ export interface loginForm {
 }
 
 // 登录接口响应数据
-
+interface dataType {
+  token?: string
+  message?: string
+}
 export interface loginResponseData {
   code: number
-  data: {
-    token: string
-  }
+  data: dataType
 }
 
 // 用户信息相关数据类型

@@ -1,7 +1,7 @@
 // 路由配置
 import { createRouter, createWebHashHistory } from 'vue-router'
 // import { constentRoute } from './routes'
-let router = createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
