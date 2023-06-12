@@ -12,7 +12,7 @@ export const useUserStore = defineStore('User', {
   getters: {},
   actions: {
     async userLogin(data: loginForm) {
-      let result: loginResponseData = await reqLogin(data)
+      const result: loginResponseData = await reqLogin(data)
       if (result.code === 200) {
         this.token = result.data.token as string
         setToken(result.data.token)
