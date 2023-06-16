@@ -15,8 +15,8 @@ import Setting from './setting/index.vue'
 </script>
 <script lang="ts">
 export default {
-  name: "Tabbar"
-}         
+  name: 'Tabbar',
+}
 </script>
 <style scoped lang="scss">
 .tabbar {
@@ -30,7 +30,6 @@ export default {
     display: flex;
     align-items: center;
     margin-left: 20px;
-
   }
 
   .tabbar_right {

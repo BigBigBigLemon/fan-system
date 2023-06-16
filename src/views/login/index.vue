@@ -3,18 +3,38 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form ref="loginFormRef" class="login_form" :model="loginForm" :rules="loginRules">
+        <el-form
+          ref="loginFormRef"
+          class="login_form"
+          :model="loginForm"
+          :rules="loginRules"
+        >
           <h1 class="login_title">Welcome</h1>
           <el-form-item prop="username">
-            <el-input size="large" :prefix-icon="User" v-model="loginForm.username"></el-input>
+            <el-input
+              size="large"
+              :prefix-icon="User"
+              v-model="loginForm.username"
+            ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input size="large" type="password" :prefix-icon="Lock" v-model="loginForm.password"
-              show-password></el-input>
+            <el-input
+              size="large"
+              type="password"
+              :prefix-icon="Lock"
+              v-model="loginForm.password"
+              show-password
+            ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button size="large" type="primary" class="login_btn" color="#eb7887" plain
-              @click="submitForm(loginFormRef)">
+            <el-button
+              size="large"
+              type="primary"
+              class="login_btn"
+              color="#eb7887"
+              plain
+              @click="submitForm(loginFormRef)"
+            >
               登录
             </el-button>
           </el-form-item>
@@ -28,7 +48,7 @@
 import { User, Lock } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import useUserStore from "@/store/modules/user"
+import useUserStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 import { getTime } from '@/utils/time'
@@ -73,7 +93,6 @@ const handleLogin = async () => {
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
-
     if (valid) {
       handleLogin()
     } else {

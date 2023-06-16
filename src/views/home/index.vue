@@ -1,7 +1,7 @@
 <template>
   <el-card>
     <div class="box">
-      <img :src="userStore.avatar" alt="" class="avatar">
+      <img :src="userStore.avatar" alt="" class="avatar" />
       <div class="bottom">
         <h3 class="title">{{ getTime() }}好呀！{{ userStore.username }}</h3>
         <p class="subtitle">{{ userStore.username }}'s Project</p>
@@ -26,7 +26,6 @@ let userStore = useUserStore()
 onMounted(() => {
   userStore.userInfo()
 })
-
 </script>
 
 <style scoped lang="scss">

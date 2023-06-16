@@ -17,17 +17,20 @@ let layOutSettingStore = useLayOutSettingStore()
 let flag = ref(true)
 
 //监听仓库内部数据是否发生变化,如果发生变化，说明用户点击过刷新按钮
-watch(() => layOutSettingStore.refsh, () => {
-  //点击刷新按钮:路由组件销毁
-  flag.value = false
-  nextTick(() => {
-    flag.value = true
-  })
-})
+watch(
+  () => layOutSettingStore.refsh,
+  () => {
+    //点击刷新按钮:路由组件销毁
+    flag.value = false
+    nextTick(() => {
+      flag.value = true
+    })
+  },
+)
 </script>
 <script lang="ts">
 export default {
-  name: "Main"
+  name: 'Main',
 }
 </script>
 
@@ -38,11 +41,11 @@ export default {
 }
 
 .fade-enter-active {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .fade-enter-to {
   opacity: 1;
   transform: scale(1);
 }
-</style>  
+</style>

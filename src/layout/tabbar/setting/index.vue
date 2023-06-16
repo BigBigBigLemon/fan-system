@@ -1,23 +1,49 @@
 <template>
-  <el-button size="small" icon="Refresh" circle @click="updateRefsh"></el-button>
-  <el-button size="small" icon="FullScreen" circle @click="fullScreen"></el-button>
+  <el-button
+    size="small"
+    icon="Refresh"
+    circle
+    @click="updateRefsh"
+  ></el-button>
+  <el-button
+    size="small"
+    icon="FullScreen"
+    circle
+    @click="fullScreen"
+  ></el-button>
 
   <el-popover placement="bottom" title="主题设置" :width="300" trigger="hover">
     <!-- 表单元素 -->
     <el-form>
       <el-form-item label="主题颜色">
-        <el-color-picker @change="setColor" v-model="color" size="small" show-alpha :predefine="predefineColors" />
+        <el-color-picker
+          @change="setColor"
+          v-model="color"
+          size="small"
+          show-alpha
+          :predefine="predefineColors"
+        />
       </el-form-item>
       <el-form-item label="暗黑模式">
-        <el-switch @change="changeDark" v-model="dark" class="mt-2" style="margin-left: 24px" inline-prompt
-          active-icon="MoonNight" inactive-icon="Sunny" />
+        <el-switch
+          @change="changeDark"
+          v-model="dark"
+          class="mt-2"
+          style="margin-left: 24px"
+          inline-prompt
+          active-icon="MoonNight"
+          inactive-icon="Sunny"
+        />
       </el-form-item>
     </el-form>
     <template #reference>
       <el-button size="small" icon="Setting" circle></el-button>
     </template>
   </el-popover>
-  <img :src="userStore.avatar" style="width: 24px;height: 24px;margin:0px 10px;border-radius: 50%;">
+  <img
+    :src="userStore.avatar"
+    style="width: 24px; height: 24px; margin: 0px 10px; border-radius: 50%"
+  />
   <!-- 下拉菜单 -->
   <el-dropdown>
     <span class="el-dropdown-link">
@@ -74,7 +100,6 @@ const logout = async () => {
   await userStore.userLogout()
   //跳转到登录页面
   $router.push({ path: '/login', query: { redirect: $route.path } })
-
 }
 
 //颜色组件组件的数据
@@ -101,7 +126,7 @@ const changeDark = () => {
   //获取HTML根节点
   let html = document.documentElement
   //判断HTML标签是否有类名dark
-  dark.value ? html.className = 'dark' : html.className = ''
+  dark.value ? (html.className = 'dark') : (html.className = '')
 }
 
 //主题颜色的设置
@@ -114,7 +139,7 @@ const setColor = () => {
 
 <script lang="ts">
 export default {
-  name: "Setting"
+  name: 'Setting',
 }
 </script>
 <style scoped></style>
