@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form :ref="loginFormRef" class="login_form" :model="loginForm" :rules="rules">
+        <el-form ref="loginFormRef" class="login_form" :model="loginForm" :rules="loginRules">
           <h1 class="login_title">Welcome</h1>
           <el-form-item prop="username">
             <el-input size="large" :prefix-icon="User" v-model="loginForm.username"></el-input>
@@ -28,7 +28,7 @@
 import { User, Lock } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import { useUserStore } from '@/store/modules/users'
+import useUserStore from "@/store/modules/user"
 import { useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 import { getTime } from '@/utils/time'
@@ -38,12 +38,13 @@ let $router = useRouter()
 let userStore = useUserStore()
 
 const loginFormRef = ref<FormInstance>()
+
 const loginForm = reactive({
   username: 'admin',
   password: '111111',
 })
 
-const rules = reactive<FormRules>({
+const loginRules = reactive<FormRules>({
   name: [
     { required: true, message: '请输入用户名', trigger: 'blur' },
     { min: 4, max: 10, message: '长度范围为4-10位', trigger: 'blur' },
@@ -70,12 +71,8 @@ const handleLogin = async () => {
   }
 }
 const submitForm = async (formEl: FormInstance | undefined) => {
-  console.log(formEl)
-
   if (!formEl) return
-  console.log(2)
   await formEl.validate((valid, fields) => {
-    console.log(3)
 
     if (valid) {
       handleLogin()

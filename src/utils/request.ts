@@ -3,6 +3,8 @@
  */
 import axios from 'axios'
 import { ElMessage } from 'element-plus/es/components/index'
+//引入用户相关的仓库
+import useUserStore from '@/store/modules/user'
 
 // 通过create创建一个axios实例来配置请求
 const request = axios.create({
@@ -13,8 +15,12 @@ const request = axios.create({
 // 添加请求拦截器
 
 request.interceptors.request.use((config) => {
+  //获取用户相关的小仓库:获取仓库内部token,登录成功以后携带给服务器
+  let userStore = useUserStore()
+  if (userStore.token) {
+    config.headers.token = userStore.token
+  }
   // config 配置对象，header属性请求头，通常给服务器段携带公共参数
-
   // 返回配置对象
   return config
 })
