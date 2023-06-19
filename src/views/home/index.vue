@@ -24,7 +24,7 @@ import { onMounted } from 'vue'
 let userStore = useUserStore()
 
 onMounted(() => {
-  userStore.userInfo()
+  // userStore.userInfo()
 })
 </script>
 
