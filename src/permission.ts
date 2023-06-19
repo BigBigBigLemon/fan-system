@@ -9,7 +9,7 @@ nprogress.configure({ showSpinner: false })
 //获取用户相关的小仓库内部token数据,去判断用户是否登录成功
 import useUserStore from './store/modules/user'
 import pinia from './store'
-let userStore = useUserStore(pinia)
+const userStore = useUserStore(pinia)
 
 //全局守卫:项目当中任意路由切换都会触发的钩子
 //全局前置守卫
@@ -18,9 +18,9 @@ router.beforeEach(async (to: any, from: any, next: any) => {
 
   nprogress.start()
   //获取token,去判断用户登录、还是未登录
-  let token = userStore.token
+  const token = userStore.token
   //获取用户名字
-  let username = userStore.username
+  const username = userStore.username
   //用户登录判断
   if (token) {
     //登录成功,访问login,不能访问,指向首页
